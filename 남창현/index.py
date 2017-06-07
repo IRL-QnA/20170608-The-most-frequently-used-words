@@ -11,6 +11,7 @@ soup = BeautifulSoup(html, 'html.parser')
 
 data = ''
 
+# 구글은 `span.st`에 검색 결과 내용이 출력되길래 `st`클래스명을 가진 `span`태그를 읽어들이는 부분임.
 for span_tag in soup.find_all('span', { 'class' : 'st' }):
     text = span_tag.text
     text = text.replace('.', '').replace(',', '')
